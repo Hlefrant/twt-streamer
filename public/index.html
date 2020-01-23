@@ -6,25 +6,32 @@
     <title>TwT Streamer</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-        console.log("It works!");
-        const socket = new WebSocket(`ws://${window.location.hostname}:${window.location.port}`);
 
-        socket.addEventListener('open', event => {
-            console.log("connected", event);
-        });
-
-        socket.addEventListener('message', event => {
-            console.log("new message", event.data);
-
-            socket.send("message received!");
-        });
-    </script>
 </head>
 
 <body>
 <p>Hello world!</p>
+<div class="list"></div>
+<script>
+    console.log("It works!");
+    const list = document.querySelector('.list');
+    const socket = new WebSocket(`ws://${window.location.hostname}:${window.location.port}`);
 
+    socket.addEventListener('open', event => {
+        console.log("connected", event);
+    });
+
+    socket.addEventListener('message', event => {
+        const item = JSON.parse(event.data);
+        list.insertAdjacentHTML("afterbegin",
+            "<div>" +
+                "<img src="+ item.image +" alt=''>" +
+                "<h1>"+ item.name+"</h1>" +
+                "<p>"+ item.text+"</p>" +
+            "</div>");
+        socket.send("message received!");
+    });
+</script>
 </body>
 
 </html>

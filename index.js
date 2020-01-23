@@ -14,6 +14,10 @@ wsServer.on("connection", client => {
     })
 
     client.send("Welcome!");
+
+    twitterStream.on("data", tweet => {
+        client.send(JSON.stringify({name: tweet.user.name, text: tweet.text, image: tweet.user.profile_image_url_https}));
+    })
 })
 
 server.listen(process.env.PORT);
