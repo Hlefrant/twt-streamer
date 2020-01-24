@@ -6,32 +6,102 @@
     <title>TwT Streamer</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<p>Hello world!</p>
-<div class="list"></div>
-<script>
-    console.log("It works!");
-    const list = document.querySelector('.list');
-    const socket = new WebSocket(`ws://${window.location.hostname}:${window.location.port}`);
 
-    socket.addEventListener('open', event => {
-        console.log("connected", event);
-    });
+<table>
+    <thead>
+    <tr>
+        <th colspan="2">Ligue 1 des tweets</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr data-name="psg">
+        <td >psg</td>
+        <td class="value">0</td>
+    </tr>
+    <tr data-name="olympique">
+        <td >Olympique</td>
+        <td class="value">0</td>
+    </tr>
+    <tr data-name="rennes">
+        <td >Rennes</td>
+        <td class="value">0</td>
+    </tr>
+    <tr data-name="nantes">
+        <td >Nantes</td>
+        <td class="value">0</td>
+    </tr>
+    <tr data-name="lille">
+        <td >Lille</td>
+        <td class="value">0</td>
+    </tr>
+    <tr data-name="montpellier">
+        <td >Montpellier</td>
+        <td class="value">0</td>
+    </tr>
+    <tr data-name="lyon">
+        <td >Lyon</td>
+        <td class="value">0</td>
+    </tr>
+    <tr data-name="reims">
+        <td >Reims</td>
+        <td class="value">0</td>
+    </tr>
+    <tr data-name="monaco">
+        <td >Monaco</td>
+        <td class="value">0</td>
+    </tr>
+    <tr data-name="angers">
+        <td >Angers</td>
+        <td class="value">0</td>
+    </tr>
+    <tr data-name="nice">
+        <td >Nice</td>
+        <td class="value">0</td>
+    </tr>
+    <tr data-name="strasbourg">
+        <td >Strasbourg</td>
+        <td class="value">0</td>
+    </tr>
+    <tr data-name="bordeaux">
+        <td >Bordeaux</td>
+        <td class="value">0</td>
+    </tr>
+    <tr data-name="brest">
+        <td >Brest</td>
+        <td class="value">0</td>
+    </tr>
+    <tr data-name="asse">
+        <td >Asse</td>
+        <td class="value">0</td>
+    </tr>
+    <tr data-name="dijon">
+        <td >Dijon</td>
+        <td class="value">0</td>
+    </tr>
+    <tr data-name="metz">
+        <td >Metz</td>
+        <td class="value">0</td>
+    </tr>
+    <tr data-name="amiens">
+        <td >Amiens</td>
+        <td class="value">0</td>
+    </tr>
+    <tr data-name="nimes">
+        <td >Nimes</td>
+        <td class="value">0</td>
+    </tr>
+    <tr data-name="toulouse">
+        <td>Toulouse</td>
+        <td class="value">0</td>
+    </tr>
 
-    socket.addEventListener('message', event => {
-        const item = JSON.parse(event.data);
-        list.insertAdjacentHTML("afterbegin",
-            "<div>" +
-                "<img src="+ item.image +" alt=''>" +
-                "<h1>"+ item.name+"</h1>" +
-                "<p>"+ item.text+"</p>" +
-            "</div>");
-        socket.send("message received!");
-    });
-</script>
+    </tbody>
+</table>
+<script src="scripts.js"></script>
 </body>
 
 </html>
