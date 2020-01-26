@@ -14,9 +14,11 @@ wsServer.on("connection", client => {
 
         if (message === "stop"){
             twitterStream.pause();
+            console.log('pause');
         }
         if (message === "restart"){
             twitterStream.resume();
+            console.log("resume")
         }
 
     })

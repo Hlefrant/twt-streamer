@@ -7,8 +7,7 @@ socket.addEventListener('open', event => {
 
 socket.addEventListener('message', event => {
     const items = JSON.parse(event.data);
-    const elements = document.querySelectorAll('tr');
-
+    const elements = document.querySelectorAll('.club');
     elements.forEach(element => {
         const valueSection = element.querySelector('.value');
         let dataName = element.dataset.name;
