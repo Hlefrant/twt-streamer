@@ -1,5 +1,4 @@
 console.log("It works!");
-const list = document.querySelector('.list');
 const socket = new WebSocket(`ws://${window.location.hostname}:${window.location.port}`);
 
 socket.addEventListener('open', event => {
@@ -15,15 +14,10 @@ socket.addEventListener('message', event => {
         let dataName = element.dataset.name;
         const keys = Object.keys(items);
         keys.forEach(key => {
-            if (key === dataName){
+            if (key.toLowerCase() === dataName){
                 valueSection.innerHTML = items[key].value;
             }
-
         })
-
     })
-
-
-
     socket.send("message received!");
 });
