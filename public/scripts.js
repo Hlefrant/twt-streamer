@@ -21,3 +21,19 @@ socket.addEventListener('message', event => {
     })
     socket.send("message received!");
 });
+
+const stop = document.querySelector('.stop');
+const restart = document.querySelector('.restart');
+
+stop.addEventListener('click', () => {
+    socket.send("stop");
+})
+
+restart.addEventListener('click', () => {
+    socket.send("restart");
+})
+
+
+
+
+

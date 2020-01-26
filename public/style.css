@@ -43,14 +43,33 @@ table{
     position: relative;
     z-index: 1;
 }
+button{
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    border: 1.5px solid #fa0100;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px 15px;
+}
+
+table td{
+    padding: 2px 0 2px 10px;
+}
 table .value{
     text-align: center;
+    padding: 2px 0;
 }
 
 .head__table{
     border-bottom: 1px solid #fa0100;
     margin-bottom: 8px;
 }
+
+.head__table td{
+    padding: 10px 0 10px 10px;
+}
 .head__table td:last-child{
+    padding: 10px 0;
     text-align: center;
 }
